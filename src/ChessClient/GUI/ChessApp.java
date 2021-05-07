@@ -1,10 +1,14 @@
 package ChessClient.GUI;
 
 import ChessClient.GUI.Board.Board;
+import ChessClient.GUI.Menu.Menu;
+import ChessClient.GUI.Menu.Settings;
 
 public class ChessApp {
 
     private Board mainBoard;
+    private Menu menu;
+    private Settings settings;
 
 
 }
