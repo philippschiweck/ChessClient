@@ -14,6 +14,7 @@ public class ChessApp {
 
     public ChessApp(){
         this.frame = new MainFrame();
+        frame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     }
 
 

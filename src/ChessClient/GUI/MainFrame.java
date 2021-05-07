@@ -2,13 +2,26 @@ package ChessClient.GUI;
 
 import javax.swing.*;
 
+/**
+ * JFrame window for the
+ */
 public class MainFrame extends JFrame {
 
     MainFrame(){
-        this.setTitle("Word Cloud");
-        this.setSize(1000, 620);
-        this.setResizable(false);
-        this.setLocation(50, 50);
+        initializeWindow();
+    }
+
+    /**
+     * Initializes the GUI Window as undecorated Fullscreen JFrame.
+     */
+    private void initializeWindow(){
+
+        this.setTitle("Chess Client");
+
+        //Fullscreen Application
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setUndecorated(true);
+
         this.setVisible(true);
     }
 }
