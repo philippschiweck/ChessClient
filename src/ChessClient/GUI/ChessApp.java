@@ -10,5 +10,11 @@ public class ChessApp {
     private Menu menu;
     private Settings settings;
 
+    private MainFrame frame;
+
+    public ChessApp(){
+        this.frame = new MainFrame();
+    }
+
 
 }
