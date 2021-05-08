@@ -13,7 +13,12 @@ public class ChessApp {
     private MainFrame frame;
 
     public ChessApp(){
-        this.frame = new MainFrame();
+        frame = new MainFrame();
+
+        menu = new Menu();
+
+        frame.add(menu);
+
         frame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     }
 

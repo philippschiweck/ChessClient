@@ -22,6 +22,9 @@ public class MainFrame extends JFrame {
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setUndecorated(true);
 
+        this.add(new JPanel());
+
+
         this.setVisible(true);
     }
 }
