@@ -1,8 +1,8 @@
-package ChessClient.GUI;
+package ChessClient;
 
 import ChessClient.Chesslogic.Board.Board;
-import ChessClient.GUI.Menu.Menu;
-import ChessClient.GUI.Menu.Settings;
+import ChessClient.GUI.MainFrame;
+import ChessClient.GUI.Menu.*;
 
 public class ChessApp {
 
@@ -13,6 +13,11 @@ public class ChessApp {
     private MainFrame frame;
 
     public ChessApp(){
+        initGui();
+
+    }
+
+    private void initGui(){
         frame = new MainFrame();
 
         menu = new Menu();
