@@ -1,9 +1,10 @@
 package ChessClient.GUI;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
- * JFrame window for the
+ * JFrame window for the ChessApp.
  */
 public class MainFrame extends JFrame {
 
@@ -16,14 +17,14 @@ public class MainFrame extends JFrame {
      */
     private void initializeWindow(){
 
-        this.setTitle("Chess Client");
+        this.setTitle("Queens Chess");
+
+        this.setLayout(new BorderLayout());
+        this.setBackground(Color.GREEN);
 
         //Fullscreen Application
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setUndecorated(true);
-
-        this.add(new JPanel());
-
 
         this.setVisible(true);
     }

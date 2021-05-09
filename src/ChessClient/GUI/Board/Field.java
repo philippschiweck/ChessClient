@@ -7,7 +7,11 @@ public class Field {
     private Piece piece;
 
     public Field(){
+        this.piece = null;
+    }
 
+    public Field(Piece piece){
+        this.piece = piece;
     }
 
     public Piece getPiece() {
@@ -16,5 +20,9 @@ public class Field {
 
     public void setPiece(Piece piece) {
         this.piece = piece;
+    }
+
+    public void removePiece(){
+        this.piece = null;
     }
 }

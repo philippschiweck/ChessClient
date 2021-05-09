@@ -4,6 +4,9 @@ import ChessClient.GUI.Board.Board;
 import ChessClient.GUI.Menu.Menu;
 import ChessClient.GUI.Menu.Settings;
 
+import javax.swing.*;
+import java.awt.*;
+
 public class ChessApp {
 
     private Board mainBoard;
@@ -13,13 +16,23 @@ public class ChessApp {
     private MainFrame frame;
 
     public ChessApp(){
+
         frame = new MainFrame();
 
-        menu = new Menu();
+        //Add Menu
+        menu = new Menu(this);
+        frame.add(menu, BorderLayout.CENTER);
+        initChessApp();
+    }
 
-        frame.add(menu);
+    private void initChessApp(){
 
-        frame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        //Add Image Icon
+        ImageIcon img = new ImageIcon("assets/chess_pieces/w_queen.png");
+        this.frame.setIconImage(img.getImage());
+
+        this.frame.setVisible(true);
+        this.frame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     }
 
 
