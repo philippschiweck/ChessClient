@@ -1,15 +1,15 @@
 package ChessClient.GUI.Menu;
 
-import ChessClient.GUI.ChessApp;
+import ChessClient.ChessApp;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class Menu extends JPanel {
+public class ChessMenu extends JPanel {
 
     private ChessApp app;
     
-    public Menu(ChessApp app){
+    public ChessMenu(ChessApp app){
 
         this.app = app;
 

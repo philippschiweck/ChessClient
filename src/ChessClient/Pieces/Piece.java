@@ -26,4 +26,13 @@ public abstract class Piece {
     public PieceType getType() {
         return type;
     }
+
+    public String getPieceIcon() {
+        return pieceIcon;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Piece{%s, %s}", color.toString(), type.toString());
+    }
 }
