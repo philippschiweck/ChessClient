@@ -1,6 +1,5 @@
 package ChessClient.Chesslogic.Board;
 
-import ChessClient.Chesslogic.BoardSetup;
 import ChessClient.Chesslogic.Game;
 
 public class Board {

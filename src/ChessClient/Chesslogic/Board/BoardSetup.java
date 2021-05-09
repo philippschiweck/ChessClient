@@ -1,11 +1,11 @@
-package ChessClient.Chesslogic;
+package ChessClient.Chesslogic.Board;
 
 import ChessClient.Chesslogic.Board.Field;
 
 public final class BoardSetup {
 
     //Class is non instantiable
-    private BoardSetup(){};
+    private BoardSetup(){}
 
     public static Field[][] createInitialSetup(){
 
