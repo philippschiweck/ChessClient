@@ -1,6 +1,6 @@
 package ChessClient.GUI;
 
-import ChessClient.GUI.Board.Board;
+import ChessClient.Chesslogic.Board.Board;
 import ChessClient.GUI.Menu.Menu;
 import ChessClient.GUI.Menu.Settings;
 
