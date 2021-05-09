@@ -1,4 +1,11 @@
 package ChessClient.Chesslogic;
 
-public class MoveValidation {
+public abstract class MoveValidation {
+
+    public boolean validateRook(BoardState state, BoardPosition position){
+        boolean isMoveValid = false;
+
+
+        return isMoveValid;
+    }
 }
