@@ -1,8 +1,8 @@
-package ChessClient.GUI;
+package ChessClient;
 
-import ChessClient.GUI.Board.Board;
-import ChessClient.GUI.Menu.Menu;
-import ChessClient.GUI.Menu.Settings;
+import ChessClient.Chesslogic.Board.Board;
+import ChessClient.GUI.MainFrame;
+import ChessClient.GUI.Menu.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,15 +17,19 @@ public class ChessApp {
 
     public ChessApp(){
 
+        initGui();
+
+    }
+
+    private void initGui(){
         frame = new MainFrame();
 
         //Add Menu
         menu = new Menu(this);
         frame.add(menu, BorderLayout.CENTER);
         initChessApp();
-    }
 
-    private void initChessApp(){
+        frame.add(menu);
 
         //Add Image Icon
         ImageIcon img = new ImageIcon("assets/chess_pieces/w_queen.png");

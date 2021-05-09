@@ -8,7 +8,7 @@ import java.awt.*;
  */
 public class MainFrame extends JFrame {
 
-    MainFrame(){
+    public MainFrame(){
         initializeWindow();
     }
 
