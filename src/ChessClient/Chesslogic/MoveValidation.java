@@ -1,11 +1,11 @@
 package ChessClient.Chesslogic;
 
-import ChessClient.Chesslogic.Board.Board;
-import ChessClient.Chesslogic.Board.Field;
+import ChessClient.Chesslogic.Board.BoardState;
+import ChessClient.Chesslogic.Board.FieldPosition;
 
 public abstract class MoveValidation {
 
-    public boolean validateRook(Board currentBoard, Field currentField, Field targetField){
+    public boolean validateRook(BoardState currentBoardState, FieldPosition currentFieldPosition, FieldPosition targetFieldPosition){
         boolean isMoveValid = false;
 
 

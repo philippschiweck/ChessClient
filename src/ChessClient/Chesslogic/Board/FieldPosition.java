@@ -2,13 +2,13 @@ package ChessClient.Chesslogic.Board;
 
 import ChessClient.Pieces.Piece;
 
-public class Field {
+public class FieldPosition {
 
     private Piece piece;
     private char column;
     private int row;
 
-    public Field(Piece piece, char column, int row){
+    public FieldPosition(Piece piece, char column, int row){
         this.piece = piece;
         this.column = column;
         this.row = row;

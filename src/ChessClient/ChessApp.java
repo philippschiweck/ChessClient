@@ -1,6 +1,6 @@
 package ChessClient;
 
-import ChessClient.Chesslogic.Board.Board;
+import ChessClient.Chesslogic.Board.BoardState;
 import ChessClient.GUI.MainFrame;
 import ChessClient.GUI.Menu.*;
 
@@ -9,7 +9,7 @@ import java.awt.*;
 
 public class ChessApp {
 
-    private Board mainBoard;
+    private BoardState mainBoardState;
     private Menu menu;
     private Settings settings;
 
