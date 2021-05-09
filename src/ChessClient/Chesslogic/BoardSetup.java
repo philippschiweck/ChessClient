@@ -1,4 +1,13 @@
 package ChessClient.Chesslogic;
 
-public class BoardSetup {
+public abstract class BoardSetup {
+
+    public BoardState createSetup(){
+        BoardState initialSetup = new BoardState();
+
+
+        return initialSetup;
+    }
+
+
 }
