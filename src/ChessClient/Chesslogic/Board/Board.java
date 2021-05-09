@@ -1,6 +1,4 @@
-package ChessClient.GUI.Board;
-
-import ChessClient.Pieces.Piece;
+package ChessClient.Chesslogic.Board;
 
 public class Board {
 

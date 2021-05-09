@@ -1,12 +1,15 @@
-package ChessClient.GUI.Board;
+package ChessClient.Chesslogic.Board;
 
 import ChessClient.Pieces.Piece;
 
 public class Field {
 
     private Piece piece;
+    private int x;
+    private int y;
 
-    public Field(){
+    public Field(Piece piece, int x, int y){
+
 
     }
 
