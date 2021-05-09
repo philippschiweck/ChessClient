@@ -6,5 +6,4 @@ public class Player {
 
     private ChessColor color;
 
-
 }

@@ -32,6 +32,6 @@ public class FieldPosition {
 
     @Override
     public String toString() {
-        return column + Integer.toString(row);
+        return column + Integer.toString(row + 1);
     }
 }
