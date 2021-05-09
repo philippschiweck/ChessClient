@@ -1,6 +1,6 @@
 package ChessClient.Pieces;
 
-public enum Color {
+public enum ChessColor {
     BLACK,
     WHITE
 }

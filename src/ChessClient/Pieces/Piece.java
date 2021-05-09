@@ -1,18 +1,21 @@
 package ChessClient.Pieces;
 
+
 public abstract class Piece {
 
     private int value;
-    private Color color;
+    private ChessColor color;
     private PieceType type;
+    private String pieceIcon;
 
-    public Piece(Color color, PieceType type){
+    public Piece(ChessColor color, PieceType type, String imagePath){
         this.color = color;
         this.type = type;
         this.value = type.getValue();
+        this.pieceIcon = imagePath;
     }
 
-    public Color getColor(){
+    public ChessColor getColor(){
         return color;
     }
 
