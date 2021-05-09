@@ -2,12 +2,12 @@ package ChessClient.Chesslogic.Board;
 
 import ChessClient.Chesslogic.Game;
 
-public class Board {
+public class BoardState {
 
-    private Field[][] boardState;
+    private FieldPosition[][] boardState;
     private Game game;
 
-    public Board(Game game){
+    public BoardState(Game game){
 
         this.game = game;
 

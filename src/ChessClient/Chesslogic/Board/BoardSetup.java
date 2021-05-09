@@ -8,14 +8,14 @@ public final class BoardSetup {
     //Class is non instantiable
     private BoardSetup(){}
 
-    public static Field[][] createInitialSetup(){
+    public static FieldPosition[][] createInitialSetup(){
 
-        Field[][] initialSetup = new Field[8][8];
+        FieldPosition[][] initialSetup = new FieldPosition[8][8];
 
         for(int i = 0; i < initialSetup.length; i++){
             for(int j = 0; j < initialSetup[i].length; j++){
                 char column = 'a';
-                initialSetup[i][j] = new Field(null, (char)(column + i), j);
+                initialSetup[i][j] = new FieldPosition(null, (char)(column + i), j);
             }
         }
 
