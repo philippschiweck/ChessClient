@@ -1,4 +1,4 @@
-package ChessClient.Pieces;
+package ChessClient.GUI.Pieces;
 
 import ChessClient.Chesslogic.Pieces.ChessColor;
 import ChessClient.GUI.Menu.Settings;

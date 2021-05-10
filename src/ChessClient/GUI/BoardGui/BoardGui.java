@@ -5,11 +5,10 @@ import ChessClient.Chesslogic.Board.FieldPosition;
 import ChessClient.GUI.Menu.Settings;
 import ChessClient.Chesslogic.Pieces.ChessColor;
 import ChessClient.Chesslogic.Pieces.Piece;
-import ChessClient.Pieces.PieceIcons;
+import ChessClient.GUI.Pieces.PieceIcons;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseEvent;
 
 
 /**
