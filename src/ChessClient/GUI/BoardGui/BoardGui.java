@@ -25,6 +25,8 @@ public class BoardGui extends JLayeredPane {
 
     public BoardGui(BoardState boardState, Settings settings){
 
+        //TODO Board Gui and initial Boardstate are currently not correct. (White Pieces need to be on the bottom / the board needs to be turned around)
+
         this.boardState = boardState;
         this.settings = settings;
         this.boardSize = new Dimension(settings.getBoardsize().getSizeX(), settings.getBoardsize().getSizeY());
@@ -36,6 +38,7 @@ public class BoardGui extends JLayeredPane {
         //Update initial Boardstate
         updateBoardState();
     }
+
 
     /**
      * Initializes the BoardGui with an 8x8 GridLayout and colors the corresponding Fields with either gray or white.
