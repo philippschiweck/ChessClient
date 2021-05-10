@@ -1,6 +1,6 @@
 package ChessClient.Chesslogic.Board;
 
-import ChessClient.Pieces.Piece;
+import ChessClient.Chesslogic.Pieces.Piece;
 
 public class FieldPosition {
 

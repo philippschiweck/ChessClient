@@ -1,7 +1,6 @@
 package ChessClient.Chesslogic;
 
 import ChessClient.Chesslogic.Board.BoardState;
-import ChessClient.Pieces.ChessColor;
 
 public abstract class Game {
 

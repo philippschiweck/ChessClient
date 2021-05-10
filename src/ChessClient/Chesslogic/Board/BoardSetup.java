@@ -1,7 +1,7 @@
 package ChessClient.Chesslogic.Board;
 
-import ChessClient.Pieces.ChessColor;
-import ChessClient.Pieces.PieceTypes.*;
+import ChessClient.Chesslogic.Pieces.ChessColor;
+import ChessClient.Chesslogic.Pieces.PieceTypes.*;
 
 public final class BoardSetup {
 

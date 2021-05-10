@@ -6,7 +6,7 @@ import ChessClient.Chesslogic.Player;
 import ChessClient.GUI.BoardGui.BoardGui;
 import ChessClient.GUI.MainFrame;
 import ChessClient.GUI.Menu.*;
-import ChessClient.Pieces.ChessColor;
+import ChessClient.Chesslogic.Pieces.ChessColor;
 
 import javax.swing.*;
 import java.awt.*;

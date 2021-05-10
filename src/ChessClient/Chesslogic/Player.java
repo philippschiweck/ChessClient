@@ -1,6 +1,6 @@
 package ChessClient.Chesslogic;
 
-import ChessClient.Pieces.ChessColor;
+import ChessClient.Chesslogic.Pieces.ChessColor;
 
 public class Player {
 
