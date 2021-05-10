@@ -1,4 +1,4 @@
-package ChessClient.Pieces;
+package ChessClient.Chesslogic.Pieces;
 
 
 public abstract class Piece {

@@ -1,9 +1,9 @@
-package ChessClient.Pieces.PieceTypes;
+package ChessClient.Chesslogic.Pieces.PieceTypes;
 
 
-import ChessClient.Pieces.ChessColor;
-import ChessClient.Pieces.Piece;
-import ChessClient.Pieces.PieceType;
+import ChessClient.Chesslogic.Pieces.ChessColor;
+import ChessClient.Chesslogic.Pieces.Piece;
+import ChessClient.Chesslogic.Pieces.PieceType;
 
 public class King extends Piece {
 

@@ -1,4 +1,4 @@
-package ChessClient.Pieces;
+package ChessClient.Chesslogic.Pieces;
 
 public enum ChessColor {
     BLACK,
