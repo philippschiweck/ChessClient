@@ -5,10 +5,10 @@ import ChessClient.Pieces.Piece;
 public class FieldPosition {
 
     private Piece piece;
-    private char column;
+    private int column;
     private int row;
 
-    public FieldPosition(Piece piece, char column, int row){
+    public FieldPosition(Piece piece, int column, int row){
         this.piece = piece;
         this.column = column;
         this.row = row;
@@ -22,7 +22,7 @@ public class FieldPosition {
         this.piece = piece;
     }
 
-    public char getColumn() {
+    public int getColumn() {
         return column;
     }
 
@@ -32,6 +32,6 @@ public class FieldPosition {
 
     @Override
     public String toString() {
-        return column + Integer.toString(row + 1);
+        return String.format("Column %i| Row %i ", column, row) ;
     }
 }
