@@ -6,15 +6,16 @@ import ChessClient.GUI.Menu.Settings;
 import ChessClient.Pieces.ChessColor;
 import ChessClient.Pieces.Piece;
 import ChessClient.Pieces.PieceIcons;
-import ChessClient.Pieces.PieceTypes.*;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
+import java.awt.event.MouseEvent;
 
+
+/**
+ * BoardGui extends JLayeredPane and contains an 8x8 GridLayout displaying the Chess Squares. PieceIcons are placed in the positions according to the BoardState whenever
+ * the board is updated.
+ */
 public class BoardGui extends JLayeredPane {
 
     private BoardState boardState;
@@ -24,24 +25,29 @@ public class BoardGui extends JLayeredPane {
     private PieceIcons pieceIcons;
 
     public BoardGui(BoardState boardState, Settings settings){
+
         this.boardState = boardState;
         this.settings = settings;
         this.boardSize = new Dimension(settings.getBoardsize().getSizeX(), settings.getBoardsize().getSizeY());
         this.pieceIcons = new PieceIcons(settings);
 
+
         initBoardGui();
 
-
+        //Update initial Boardstate
         updateBoardState();
     }
 
+    /**
+     * Initializes the BoardGui with an 8x8 GridLayout and colors the corresponding Fields with either gray or white.
+     */
     private void initBoardGui(){
         this.setLayout( new GridLayout(8, 8) );
         this.setPreferredSize( boardSize );
         this.setBounds(0, 0, boardSize.width, boardSize.height);
 
         for (int i = 0; i < 64; i++) {
-            JPanel square = new JPanel(new BorderLayout());
+            Square square = new Square(new BorderLayout());
             this.add(square);
 
             int row = (i / 8) % 2;
@@ -50,11 +56,13 @@ public class BoardGui extends JLayeredPane {
             else
                 square.setBackground( i % 2 == 0 ? Color.gray : Color.white );
         }
-
-
     }
 
-    private void updateBoardState(){
+    /**
+     * Updates the current PieceIcons shown in the GUI according to the current BoardState.
+     *
+     */
+    public void updateBoardState(){
 
         //Iteration with i and j is needed for getting LayeredPane component to add piece image
         for(int i = 0; i < boardState.getBoardState().length; i++){
@@ -94,16 +102,12 @@ public class BoardGui extends JLayeredPane {
                         }
                     }
 
-                    //Add current PieceIcon to JLabel, add label to corresponding field
-                    JLabel piece = new JLabel( currentIcon, JLabel.CENTER );//current.getPiece().getPieceIcon()
-                    JPanel panel = (JPanel)this.getComponent(8 * i + j);
+                    //Add current PieceIcon to Icon, add label to corresponding field
+                    Icon piece = new Icon( currentIcon, JLabel.CENTER );//current.getPiece().getPieceIcon()
+                    Square panel = (Square)this.getComponent(8 * i + j);
                     panel.add(piece);
-
                 }
             }
         }
     }
-
-
-
 }

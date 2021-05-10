@@ -20,7 +20,7 @@ public class ChessMenu extends JPanel {
 
         JButton button = new JButton("Click");
 
-        //this.setSize(new Dimension(640, 480));
+        this.setSize(new Dimension(640, 480));
 
         this.setBackground(Color.GRAY);
 
