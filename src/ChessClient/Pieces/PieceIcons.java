@@ -1,7 +1,8 @@
 package ChessClient.Pieces;
 
+import ChessClient.Chesslogic.Pieces.ChessColor;
 import ChessClient.GUI.Menu.Settings;
-import ChessClient.Pieces.PieceTypes.*;
+import ChessClient.Chesslogic.Pieces.PieceTypes.*;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;

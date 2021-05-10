@@ -3,8 +3,8 @@ package ChessClient.GUI.BoardGui;
 import ChessClient.Chesslogic.Board.BoardState;
 import ChessClient.Chesslogic.Board.FieldPosition;
 import ChessClient.GUI.Menu.Settings;
-import ChessClient.Pieces.ChessColor;
-import ChessClient.Pieces.Piece;
+import ChessClient.Chesslogic.Pieces.ChessColor;
+import ChessClient.Chesslogic.Pieces.Piece;
 import ChessClient.Pieces.PieceIcons;
 
 import javax.swing.*;
