@@ -23,6 +23,7 @@ public class ChessApp {
 
         initGui();
 
+
     }
 
     private void initGui(){
