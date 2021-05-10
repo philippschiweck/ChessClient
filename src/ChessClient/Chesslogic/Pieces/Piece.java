@@ -1,6 +1,9 @@
 package ChessClient.Chesslogic.Pieces;
 
 
+import ChessClient.Chesslogic.Board.BoardState;
+import ChessClient.Chesslogic.Board.FieldPosition;
+
 public abstract class Piece {
 
     private int value;
@@ -14,6 +17,8 @@ public abstract class Piece {
         this.value = type.getValue();
         this.pieceIcon = imagePath;
     }
+
+    public abstract boolean validateMove(BoardState currentBoardState, FieldPosition currentFieldPosition, FieldPosition targetFieldPosition);
 
     public ChessColor getColor(){
         return color;
@@ -30,6 +35,8 @@ public abstract class Piece {
     public String getPieceIcon() {
         return pieceIcon;
     }
+
+
 
     @Override
     public String toString() {
