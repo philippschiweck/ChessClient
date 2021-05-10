@@ -41,19 +41,14 @@ public abstract class Game {
         }
 
         //At the end of a turn, if there is a checkmate, the current Player will be set as winner, ending the game.
-        if(checkForCheckmate()){
+        if(MoveValidation.checkForCheckmate()){
             winner = currentPlayer;
         }
 
         return nextTurn;
     }
 
-    private boolean checkForCheckmate(){
-        boolean checkMate = false;
 
-
-        return checkMate;
-    }
 
     private void nextPlayer(){
         currentPlayer = currentPlayer.equals(playerWhite) ? playerBlack : playerWhite;
