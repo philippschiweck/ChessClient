@@ -4,16 +4,18 @@ import ChessClient.Chesslogic.Board.BoardState;
 
 public abstract class Game {
 
-    private Player playerWhite;
-    private Player playerBlack;
-    private Player currentPlayer;
-    private Player winner;
+    protected Player playerWhite;
+    protected Player playerBlack;
+    protected Player currentPlayer;
+    protected Player winner;
 
-    private BoardState boardstate;
+    protected BoardState boardstate;
 
     public Game(Player playerWhite, Player playerBlack){
         initGame(playerWhite, playerBlack);
     }
+
+    public abstract boolean nextTurn();
 
     private void initGame(Player playerWhite, Player playerBlack){
         this.playerWhite = playerWhite;
@@ -23,40 +25,13 @@ public abstract class Game {
         this.currentPlayer = playerWhite;
     }
 
-    /**
-     * This is the function used for the general game loop. nextTurn should be repeatedly called for every turn in the game.
-     * @return true if the game is over, false if the game continues
-     */
-    private boolean nextTurn(){
 
-        boolean nextTurn = true;
-
-        if(winner != null){
-
-            nextTurn = false;
-        } else {
-
-            nextPlayer();
-        }
-
-        //At the end of a turn, if there is a checkmate, the current Player will be set as winner, ending the game.
-        if(MoveValidation.checkForCheckmate()){
-            winner = currentPlayer;
-        }
-
-        return nextTurn;
-    }
-
-
-
-    private void nextPlayer(){
+    protected void nextPlayer(){
         currentPlayer = currentPlayer.equals(playerWhite) ? playerBlack : playerWhite;
     }
 
     //Get and Set Methods
-    public Player getPlayerWhite() {
-        return playerWhite;
-    }
+    public Player getPlayerWhite() { return playerWhite; }
 
     public Player getPlayerBlack() {
         return playerBlack;

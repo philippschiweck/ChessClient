@@ -5,9 +5,10 @@ import ChessClient.Chesslogic.Board.FieldPosition;
 
 public final class MoveValidation {
 
-    public static boolean checkForCheckmate(){
+    public static boolean checkForCheckmate(BoardState boardState){
         boolean checkMate = false;
 
+        //TODO Check for Checkmate function... (fun)
 
         return checkMate;
     }
@@ -19,7 +20,4 @@ public final class MoveValidation {
     public static boolean isNotSameField(int currentCol, int currentRow, int targetCol, int targetRow){
         return (currentCol != targetCol && currentRow != targetRow);
     }
-
-
-
 }
