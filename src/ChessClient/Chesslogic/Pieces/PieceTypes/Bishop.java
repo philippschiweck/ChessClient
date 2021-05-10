@@ -16,6 +16,20 @@ public class Bishop extends Piece {
     public boolean validateMove(BoardState currentBoardState, FieldPosition currentFieldPosition, FieldPosition targetFieldPosition){
         boolean isMoveValid = false;
 
+        int currentCol = currentFieldPosition.getColumn();
+        int currentRow = currentFieldPosition.getRow();
+
+        int targetCol = targetFieldPosition.getColumn();
+        int targetRow = targetFieldPosition.getRow();
+
+        //Check if Path is diagonal
+        int pathLength = Math.abs(currentCol - targetCol);
+        if (pathLength == Math.abs(currentRow - targetRow)){
+
+            //TODO Bishop move validation
+
+        }
+
 
         return isMoveValid;
     }
