@@ -24,22 +24,34 @@ public class Rook extends Piece {
         int targetCol = targetFieldPosition.getColumn();
         int targetRow = targetFieldPosition.getRow();
 
-        //Rook can either move in row or column, meaning one or the other must stay the same
-        if(MoveValidation.isMoveInbounds(targetCol, targetRow)){
-            if(currentCol == targetCol || currentRow == targetRow){
+        // Check if Move is inbounds and not to the same field the piece is already on
+        if(!MoveValidation.isMoveInbounds(targetCol, targetRow) || !MoveValidation.isNotSameField(currentCol, currentRow, targetCol, targetRow)) {
+            isMoveValid = false;
+        } else {
+            if(currentRow == targetRow) { // Horizontal move, check if the move happens in the column (row stays the same)
+                int dx = (currentCol < targetCol) ? 1 : -1;
 
-                int colDiff = currentCol - targetCol;
-                int rowDiff = currentRow - targetCol;
-
-                if(colDiff == 0){
-
-                } else if (rowDiff == 0) {
-
+                isMoveValid = true;
+                for (int i = currentCol + dx; i != targetCol; i += dx){
+                    if(currentBoardState.getBoardState()[currentRow][i].getPiece() != null){
+                        isMoveValid = false;
+                        break;
+                    }
                 }
+            } else if (currentCol == targetCol){ // Vertical move, check if the move happens in the row (column stays the same)
+                int dy = (currentRow < targetRow) ? 1 : -1;
+
+                isMoveValid = true;
+                for (int i = currentCol + dy; i != targetCol; i += dy){
+                    if(currentBoardState.getBoardState()[i][currentCol].getPiece() != null){
+                        isMoveValid = false;
+                        break;
+                    }
+                }
+            } else { //If move is neither in same column or row, move is invalid
+                isMoveValid = false;
             }
         }
-
         return isMoveValid;
     }
-
 }
