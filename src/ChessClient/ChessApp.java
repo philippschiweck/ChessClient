@@ -1,17 +1,18 @@
 package ChessClient;
 
-import ChessClient.Chesslogic.Board.BoardState;
 import ChessClient.Chesslogic.Game;
+import ChessClient.Chesslogic.LocalGame;
+import ChessClient.Chesslogic.Player;
 import ChessClient.GUI.BoardGui.BoardGui;
 import ChessClient.GUI.MainFrame;
 import ChessClient.GUI.Menu.*;
+import ChessClient.Chesslogic.Pieces.ChessColor;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class ChessApp {
 
-    private BoardState mainBoardState;
     private ChessMenu menu;
     private Game game;
     private Settings settings;
@@ -20,15 +21,13 @@ public class ChessApp {
     private MainFrame frame;
 
     public ChessApp(){
-
         initGui();
-
     }
 
     private void initGui(){
         frame = new MainFrame();
 
-        this.game = new Game();
+        this.game = new LocalGame(new Player(ChessColor.WHITE), new Player(ChessColor.BLACK));
         this.settings = new Settings();
         menu = new ChessMenu(this);
 
@@ -38,16 +37,11 @@ public class ChessApp {
 
         JLabel piece = new JLabel( new ImageIcon("assets/chess_pieces/b_bishop.png") );
 
-        this.mainBoardState = new BoardState(game);
-
-
         //Add BoardGui
-        this.boardgui = new BoardGui(mainBoardState, settings);
-
+        this.boardgui = new BoardGui(game.getBoardstate(), settings);
         layeredPane.add(boardgui, JLayeredPane.DEFAULT_LAYER);
 
         //Add Menu
-
         /*frame.add(menu, BorderLayout.CENTER);
         initChessApp();
 
@@ -62,6 +56,10 @@ public class ChessApp {
     }
 
     private void initChessApp(){
+
+    }
+
+    private void playGame(){
 
     }
 
