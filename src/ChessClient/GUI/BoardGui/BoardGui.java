@@ -3,6 +3,10 @@ package ChessClient.GUI.BoardGui;
 import ChessClient.Chesslogic.Board.BoardState;
 import ChessClient.Chesslogic.Board.FieldPosition;
 import ChessClient.GUI.Menu.Settings;
+import ChessClient.Pieces.ChessColor;
+import ChessClient.Pieces.Piece;
+import ChessClient.Pieces.PieceIcons;
+import ChessClient.Pieces.PieceTypes.*;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -17,15 +21,18 @@ public class BoardGui extends JLayeredPane {
     private Dimension boardSize;
     private Settings settings;
 
+    private PieceIcons pieceIcons;
+
     public BoardGui(BoardState boardState, Settings settings){
         this.boardState = boardState;
         this.settings = settings;
         this.boardSize = new Dimension(settings.getBoardsize().getSizeX(), settings.getBoardsize().getSizeY());
+        this.pieceIcons = new PieceIcons(settings);
 
         initBoardGui();
 
 
-        addPieces();
+        updateBoardState();
     }
 
     private void initBoardGui(){
@@ -47,25 +54,56 @@ public class BoardGui extends JLayeredPane {
 
     }
 
-    private void addPieces(){
+    private void updateBoardState(){
 
+        //Iteration with i and j is needed for getting LayeredPane component to add piece image
         for(int i = 0; i < boardState.getBoardState().length; i++){
             for(int j = 0; j < boardState.getBoardState()[i].length; j++){
-                FieldPosition current = boardState.getBoardState()[i][j];
-                if(current.getPiece() != null){
-                    BufferedImage img;
-                    try{
-                        img = ImageIO.read(new File(current.getPiece().getPieceIcon()));
-                        Image scaled = img.getScaledInstance(settings.getBoardsize().getSizeX() / 8, settings.getBoardsize().getSizeX() / 8, Image.SCALE_SMOOTH);
-                        JLabel piece = new JLabel( new ImageIcon(scaled), JLabel.CENTER );//current.getPiece().getPieceIcon()
-                        JPanel panel = (JPanel)this.getComponent(8 * i + j);
-                        panel.add(piece);
-                    } catch (IOException e){
-                        e.printStackTrace();
+                FieldPosition currentField = boardState.getBoardState()[i][j];
+                if(currentField.getPiece() != null){
+                    //Get current Piece
+                    Piece currentPiece = currentField.getPiece();
+                    ImageIcon currentIcon = null;
+
+                    //set corresponding ImageIcon for color/PieceType
+                    //Terrifying Switch statement
+                    switch(currentPiece.getType()){
+                        case KING: {
+                            currentIcon = currentPiece.getColor() == ChessColor.WHITE ?  pieceIcons.getwKing() : pieceIcons.getbKing();
+                            break;
+                        }
+                        case QUEEN: {
+                            currentIcon = currentPiece.getColor() == ChessColor.WHITE ?  pieceIcons.getwQueen() : pieceIcons.getbQueen();
+                            break;
+                        }
+                        case ROOK: {
+                            currentIcon = currentPiece.getColor() == ChessColor.WHITE ?  pieceIcons.getwRook() : pieceIcons.getbRook();
+                            break;
+                        }
+                        case BISHOP: {
+                            currentIcon = currentPiece.getColor() == ChessColor.WHITE ?  pieceIcons.getwBishop() : pieceIcons.getbBishop();
+                            break;
+                        }
+                        case KNIGHT: {
+                            currentIcon = currentPiece.getColor() == ChessColor.WHITE ?  pieceIcons.getwKnight() : pieceIcons.getbKnight();
+                            break;
+                        }
+                        case PAWN: {
+                            currentIcon = currentPiece.getColor() == ChessColor.WHITE ?  pieceIcons.getwPawn() : pieceIcons.getbPawn();
+                            break;
+                        }
                     }
+
+                    //Add current PieceIcon to JLabel, add label to corresponding field
+                    JLabel piece = new JLabel( currentIcon, JLabel.CENTER );//current.getPiece().getPieceIcon()
+                    JPanel panel = (JPanel)this.getComponent(8 * i + j);
+                    panel.add(piece);
+
                 }
             }
         }
     }
+
+
 
 }
